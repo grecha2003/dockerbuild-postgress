@@ -1,28 +1,29 @@
 CREATE TABLE test_table (
-  name VARCHAR(10) NOT NULL CHECK (char_length(name) >= 4 AND char_length(name) <= 10),
-  surname VARCHAR(50) NOT NULL,
-  city VARCHAR(50) NOT NULL,
-  age INT NOT NULL CHECK (age > 0 AND age <= 150)
+  name VARCHAR(10) NOT NULL CHECK (LENGTH(name) >= 4 AND LENGTH(name) <= 10),
+  surname VARCHAR(255),
+  city VARCHAR(255),
+  age INT CHECK (age > 0 AND age <= 150)
 );
 
-INSERT INTO test_table (name, surname, city, age) VALUES
-('John', 'Doe', 'New York', 28),
-('Alice', 'Johnson', 'Los Angeles', 34),
-('Bob', 'Smith', 'Chicago', 45),
-('Tom', 'Brown', 'Houston', 23),
-('Jerry', 'Miller', 'Phoenix', 57),
-('Anna', 'Davis', 'Philadelphia', 42),
-('Mike', 'Garcia', 'San Antonio', 49),
-('Chris', 'Martinez', 'San Diego', 38),
-('Paul', 'Hernandez', 'Dallas', 51),
-('Lucy', 'Lopez', 'San Jose', 29),
-('Megan', 'Gonzalez', 'Austin', 36),
-('Nancy', 'Wilson', 'Fort Worth', 33),
-('David', 'Anderson', 'Jacksonville', 27),
-('Kevin', 'Thomas', 'Columbus', 44),
-('Diana', 'Taylor', 'Charlotte', 21),
-('Oscar', 'Moore', 'Indianapolis', 30),
-('Cara', 'Jackson', 'San Francisco', 35),
-('Lisa', 'White', 'Seattle', 26),
-('Eva', 'Harris', 'Denver', 37),
-('Andy', 'Martin', 'Boston', 25);
+-- Вставка данных в таблицу
+INSERT INTO test_table (name, surname, city, age) VALUES 
+('Alice', 'Smith', 'New York', 25),
+('John', 'Doe', 'Los Angeles', 50),
+('Michael', 'Brown', 'Chicago', 35),
+('David', 'Wilson', 'Miami', 42),
+('Kate', 'Johnson', 'Dallas', 31),
+('Laura', 'Miller', 'Atlanta', 28),
+('Emily', 'Davis', 'Houston', 27),
+('Daniel', 'Garcia', 'Phoenix', 60),
+('Sophia', 'Martinez', 'Philadelphia', 15),
+('Matthew', 'Lopez', 'San Antonio', 45),
+('Joshua', 'Gonzalez', 'San Diego', 33),
+('Olivia', 'Hernandez', 'San Jose', 26),
+('Nathan', 'Moore', 'Austin', 38),
+('Samuel', 'Taylor', 'Jacksonville', 29),
+('Jack', 'Anderson', 'San Francisco', 49),
+('Henry', 'Thomas', 'Columbus', 40),
+('Mason', 'Lee', 'Fort Worth', 22),
+('Chloe', 'White', 'Indianapolis', 36),
+('Ella', 'Walker', 'Charlotte', 24),
+('James', 'Martinez', 'Seattle', 39);
